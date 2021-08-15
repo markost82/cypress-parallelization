@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "e2e-ci": "cypress-run"
+  },
   "devDependencies": {
     "cypress": "^8.2.0"
   }
