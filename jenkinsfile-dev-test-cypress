@@ -3,6 +3,7 @@
 node {
     stage('checkout') {
         checkout scm
+    }
 
     stage('e2e test') {
         try {
