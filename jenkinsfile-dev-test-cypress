@@ -1,0 +1,15 @@
+#!/usr/bin/env groovy
+
+node {
+    stage('checkout') {
+        checkout scm
+
+    stage('e2e test') {
+        try {
+            sh "npm run e2e-ci"
+        } catch(err) {
+            echo 'Test(s) failed.'
+            currentBuild.result = 'UNSTABLE'
+        } 
+    }
+}
