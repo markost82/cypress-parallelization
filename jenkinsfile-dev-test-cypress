@@ -1,6 +1,7 @@
 #!/usr/bin/env groovy
 
 node {
+     wrap([$class: 'Xvfb']) {
     stage('checkout') {
         checkout scm
     }
@@ -13,4 +14,5 @@ node {
             currentBuild.result = 'UNSTABLE'
         } 
     }
+     }
 }
